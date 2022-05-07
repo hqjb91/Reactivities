@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Header, List } from 'semantic-ui-react';
 import axios from 'axios';
@@ -9,7 +8,8 @@ function App() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/activitie').then(res => {
+    axios.get('http://localhost:5000/api/activities').then(res => {
+      console.log(res.data)
       setActivities(res.data);
     });
   }, []);
